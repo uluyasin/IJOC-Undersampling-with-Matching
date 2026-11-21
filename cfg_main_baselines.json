@@ -1,0 +1,30 @@
+{
+ "data_path": "data/benchmark_datasets.joblib",
+ "folds_path": "data/cv_folds.joblib",
+ "out_dir": "results/main",
+ "samplers": [
+  "NONE",
+  "RUS",
+  "NM1",
+  "NM2",
+  "NM3",
+  "TL",
+  "ENN",
+  "NCR",
+  "OSS",
+  "CNN",
+  "IHT",
+  "CC",
+  "SMOTE",
+  "CW"
+ ],
+ "classifiers": [
+  "CART",
+  "kNN",
+  "SVM",
+  "LR",
+  "RF"
+ ],
+ "tag": "main",
+ "chunk": 40
+}

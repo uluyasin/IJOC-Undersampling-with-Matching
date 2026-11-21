@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Exact duplicates. 29 datasets contain exact duplicate rows; after removing them (first occurrence kept, cross-class duplicates kept) and regenerating the $5\times5$ folds, the main comparison is repeated on the 55 datasets (deduplicated where applicable, otherwise main results). Median per-dataset difference to RUS; bold: Holm-adjusted Wilcoxon $p<0.05$ (3 MUS methods per classifier and metric). A bold 0.000 means that the median dataset is unchanged (absolute difference $\leq 0.0005$) while the non-zero differences are systematically signed; win/tie/loss counts and exact $p$-values are given in \texttt{results/revision/x6\_summary.csv} of the repository.}
+\label{tab:x6}
+\begin{tabular}{llrrrr}
+\toprule
+ & & \multicolumn{2}{c}{G-mean} & \multicolumn{2}{c}{ROC-AUC}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Classifier & Method & original & dedup. & original & dedup.\\
+\midrule
+CART & MUS-BS & \textbf{$-$0.020} & \textbf{$-$0.035} & \textbf{$-$0.017} & \textbf{$-$0.033}\\
+ & MUS-BO & \textbf{$-$0.027} & \textbf{$-$0.038} & \textbf{$-$0.028} & \textbf{$-$0.035}\\
+ & MUS-CS & +0.001 & 0.000 & +0.002 & +0.001\\
+\addlinespace
+kNN & MUS-BS & \textbf{$-$0.058} & \textbf{$-$0.060} & \textbf{$-$0.056} & \textbf{$-$0.053}\\
+ & MUS-BO & \textbf{$-$0.059} & \textbf{$-$0.059} & \textbf{$-$0.056} & \textbf{$-$0.054}\\
+ & MUS-CS & +0.003 & +0.001 & \textbf{+0.002} & \textbf{+0.001}\\
+\addlinespace
+SVM & MUS-BS & \textbf{$-$0.052} & \textbf{$-$0.041} & \textbf{$-$0.001} & \textbf{$-$0.002}\\
+ & MUS-BO & \textbf{$-$0.052} & \textbf{$-$0.047} & \textbf{$-$0.003} & \textbf{$-$0.002}\\
+ & MUS-CS & +0.001 & \textbf{+0.002} & \textbf{0.000} & \textbf{0.000}\\
+\addlinespace
+LR & MUS-BS & \textbf{$-$0.034} & \textbf{$-$0.032} & 0.000 & 0.000\\
+ & MUS-BO & \textbf{$-$0.025} & \textbf{$-$0.038} & 0.000 & 0.000\\
+ & MUS-CS & 0.000 & \textbf{+0.001} & \textbf{+0.001} & \textbf{+0.001}\\
+\addlinespace
+RF & MUS-BS & \textbf{$-$0.019} & \textbf{$-$0.026} & \textbf{$-$0.019} & \textbf{$-$0.007}\\
+ & MUS-BO & \textbf{$-$0.029} & \textbf{$-$0.024} & \textbf{$-$0.008} & \textbf{$-$0.007}\\
+ & MUS-CS & \textbf{+0.002} & \textbf{+0.003} & \textbf{0.000} & \textbf{0.000}\\
+\bottomrule
+\end{tabular}
+\end{table}

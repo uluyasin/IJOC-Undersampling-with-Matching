@@ -1,0 +1,39 @@
+{
+ "data_path": "data/benchmark_datasets.joblib",
+ "folds_path": "data/cv_folds.joblib",
+ "ms_path": "src/matchsampling.py",
+ "sel_small_path": "results/revision/sel_small.joblib",
+ "dedup_data_path": "data/dedup_datasets.joblib",
+ "dedup_folds_path": "data/dedup_folds.joblib",
+ "out_dir": "results/revision/runs",
+ "experiments": {
+  "x1": {
+   "n_folds": 15,
+   "chunk": 6
+  },
+  "x2": {
+   "chunk": 20
+  },
+  "x3": {
+   "chunk": 20
+  },
+  "x4": {
+   "chunk": 20
+  },
+  "x5": {
+   "chunk": 4
+  },
+  "x6": {
+   "chunk": 20
+  }
+ },
+ "first": [
+  "x3",
+  "x4",
+  "x2",
+  "x6"
+ ],
+ "main_results_path": "results/results_main_final.parquet",
+ "dup_counts_path": "results/revision/x6_duplicate_counts.csv",
+ "analysis_out": "results/revision"
+}

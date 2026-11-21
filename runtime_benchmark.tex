@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Resampling time per training fold in seconds. Under load: all 1375 training folds per method, measured while several benchmark processes ran in parallel. In isolation: the first training fold of every dataset, one process with one thread, median of five repetitions per dataset (\MUSCO: three repetitions when the first run took 30 to 120\,s, one when it took longer); median and maximum over the 55 datasets. Slope: log--log slope of the per-dataset (median) time against the majority size of the training fold [95\% confidence interval].}
+\label{tab:runtime}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrcrrc}
+\toprule
+ & \multicolumn{3}{c}{Under load} & \multicolumn{3}{c}{In isolation} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Method & Median & 95th pct. & Slope [95\% CI] & Median & Max. & Slope [95\% CI] \\
+\midrule
+RUS & 0.00612 & 0.0107 & 0.07 [0.03, 0.11] & 0.00405 & 0.00527 & 0.03 [-0.04, 0.10] \\
+\textbf{MUS-BO} & 0.0123 & 0.0704 & 0.42 [0.22, 0.62] & 0.0061 & 0.476 & 0.41 [0.20, 0.63] \\
+SMOTE & 0.0157 & 0.0355 & 0.15 [0.03, 0.26] & 0.00733 & 0.0175 & 0.10 [0.05, 0.14] \\
+\textbf{MUS-BS} & 0.0192 & 0.158 & 0.41 [0.19, 0.62] & 0.00951 & 0.343 & 0.38 [0.17, 0.59] \\
+NM1 & 0.0201 & 0.0477 & 0.38 [0.28, 0.47] & 0.00974 & 0.0911 & 0.22 [0.11, 0.32] \\
+NM2 & 0.0246 & 0.0881 & 0.49 [0.33, 0.65] & 0.0116 & 0.61 & 0.40 [0.20, 0.60] \\
+NM3 & 0.0281 & 0.081 & 0.31 [0.20, 0.43] & 0.0123 & 0.0487 & 0.12 [0.03, 0.21] \\
+TL & 0.048 & 0.168 & 0.89 [0.79, 1.00] & 0.0185 & 0.147 & 0.83 [0.73, 0.93] \\
+ENN & 0.049 & 0.177 & 0.89 [0.79, 0.98] & 0.0218 & 0.164 & 0.83 [0.72, 0.93] \\
+OSS & 0.0569 & 0.187 & 0.50 [0.40, 0.61] & 0.024 & 0.224 & 0.44 [0.31, 0.56] \\
+CC & 0.117 & 0.402 & 0.59 [0.45, 0.73] & 0.0333 & 0.621 & 0.46 [0.29, 0.63] \\
+NCR & 0.0901 & 0.26 & 0.61 [0.53, 0.70] & 0.0396 & 0.23 & 0.53 [0.44, 0.62] \\
+\textbf{MUS-CS} & 0.225 & 3.11 & 1.36 [1.23, 1.49] & 0.136 & 2.31 & 1.41 [1.29, 1.53] \\
+CNN & 1.31 & 22.0 & 1.03 [0.69, 1.38] & 0.706 & 20.5 & 0.96 [0.67, 1.24] \\
+\textbf{MUS-CO} & 1.99 & 213 & 2.18 [1.85, 2.50] & 0.902 & 506 & 2.15 [1.80, 2.50] \\
+IHT & 4.09 & 6.45 & 0.15 [0.08, 0.21] & 2.56 & 9.51 & 0.13 [0.07, 0.18] \\
+\bottomrule
+\end{tabular}
+\end{table}

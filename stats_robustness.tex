@@ -1,0 +1,36 @@
+\begin{table}[!htbp]
+\centering
+\caption{Robustness of the pairwise conclusions. Each cell gives the number of classifiers (of 5) in which the MUS method is significantly better / significantly worse than RUS (R), ClusterCentroids (C) or the best non-MUS method of that condition (B), Wilcoxon signed-rank with Holm over the full MUS-vs-non-MUS family per classifier ($\alpha=0.05$). The last block repeats the all-datasets analysis for the four secondary metrics. $\bar{R}$ = average rank of the MUS method among the 16 methods, averaged over the 5 classifiers.}
+\label{tab:robustness}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llccccccccccccrrrr}
+\toprule
+ & & \multicolumn{3}{c}{MUS-BS} & \multicolumn{3}{c}{MUS-BO} & \multicolumn{3}{c}{MUS-CS} & \multicolumn{3}{c}{MUS-CO} & \multicolumn{4}{c}{$\bar{R}$} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-11}\cmidrule(lr){12-14}\cmidrule(lr){15-18}
+Condition & Metric & R & C & B & R & C & B & R & C & B & R & C & B & BS & BO & CS & CO \\
+\midrule
+All (55) & G-mean & 0/5 & 0/5 & 0/5 & 0/5 & 0/5 & 0/5 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 8.44 & 8.63 & 4.83 & 4.63 \\
+ & ROC-AUC & 0/4 & 0/4 & 0/4 & 0/4 & 0/4 & 0/4 & 3/0 & 0/0 & 0/2 & 2/0 & 0/0 & 0/1 & 10.58 & 10.70 & 7.22 & 7.04 \\
+\midrule
+One per family (24) & G-mean & 0/4 & 0/4 & 0/3 & 0/4 & 0/4 & 0/3 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 8.96 & 9.09 & 4.91 & 4.96 \\
+ & ROC-AUC & 0/1 & 0/3 & 0/4 & 0/1 & 0/2 & 0/3 & 0/0 & 0/0 & 0/1 & 0/0 & 0/0 & 0/0 & 10.57 & 10.50 & 7.26 & 7.29 \\
+\midrule
+Excl.\ ceiling (46) & G-mean & 0/5 & 0/5 & 0/5 & 0/5 & 0/5 & 0/5 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 8.72 & 8.85 & 4.46 & 4.21 \\
+ & ROC-AUC & 0/4 & 0/4 & 0/4 & 0/4 & 0/4 & 0/4 & 2/0 & 0/0 & 0/1 & 1/0 & 0/0 & 0/1 & 10.99 & 11.03 & 6.96 & 6.78 \\
+\midrule
+IR $<$ 9 (19) & G-mean & 0/3 & 0/3 & 0/3 & 0/3 & 0/3 & 0/3 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 10.33 & 10.65 & 5.13 & 4.52 \\
+ & ROC-AUC & 0/1 & 0/2 & 0/4 & 0/1 & 0/2 & 0/4 & 0/0 & 0/0 & 0/1 & 0/0 & 0/0 & 0/0 & 10.44 & 10.72 & 7.16 & 6.58 \\
+\midrule
+IR $\geq$ 9 (36) & G-mean & 0/4 & 0/4 & 0/4 & 0/4 & 0/4 & 0/4 & 1/0 & 0/0 & 0/0 & 1/0 & 0/0 & 0/0 & 7.44 & 7.56 & 4.67 & 4.69 \\
+ & ROC-AUC & 0/3 & 0/3 & 0/4 & 0/3 & 0/2 & 0/4 & 1/0 & 0/0 & 0/1 & 0/0 & 0/0 & 0/2 & 10.65 & 10.69 & 7.26 & 7.29 \\
+\midrule
+All (55) & BAcc & 0/5 & 0/5 & 0/5 & 0/5 & 0/5 & 0/5 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 0/0 & 8.79 & 8.92 & 5.06 & 4.91 \\
+ & F1 & 0/0 & 0/1 & 0/3 & 0/0 & 0/0 & 0/3 & 4/0 & 0/0 & 0/3 & 4/0 & 0/0 & 0/3 & 8.66 & 8.79 & 7.59 & 7.23 \\
+ & MCC & 0/0 & 0/1 & 0/3 & 0/0 & 0/1 & 0/3 & 4/0 & 0/0 & 0/2 & 4/0 & 0/0 & 0/2 & 8.89 & 9.00 & 7.58 & 7.32 \\
+ & PR-AUC & 0/1 & 0/3 & 0/5 & 0/1 & 0/3 & 0/5 & 2/0 & 0/2 & 0/5 & 4/0 & 0/0 & 0/5 & 10.37 & 10.44 & 8.86 & 8.55 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

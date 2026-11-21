@@ -1,0 +1,16 @@
+instance,kind,n,d,rep,cost_complete_graph_optimum,certification
+uniform n=500 d=10 rep=0,uniform,500,10,0,145.83875849155044,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=500 d=10 rep=1,uniform,500,10,1,148.7651962509428,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=500 d=40 rep=0,uniform,500,40,0,477.9926919565428,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=500 d=40 rep=1,uniform,500,40,1,482.47242544662606,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=1000 d=10 rep=0,uniform,1000,10,0,265.58801044981124,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=1000 d=10 rep=1,uniform,1000,10,1,268.99554907150707,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=1000 d=40 rep=0,uniform,1000,40,0,933.0684952450936,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=1000 d=40 rep=1,uniform,1000,40,1,935.0869782312774,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=2000 d=10 rep=0,uniform,2000,10,0,497.0108114731373,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=2000 d=10 rep=1,uniform,2000,10,1,495.83963860508624,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=2000 d=40 rep=0,uniform,2000,40,0,1825.850912033899,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=2000 d=40 rep=1,uniform,2000,40,1,1822.7609701577423,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=5000 d=10 rep=0,uniform,5000,10,0,1116.7402042968029,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+uniform n=5000 d=40 rep=0,uniform,5000,40,0,4401.964123184875,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7
+"clustered Gaussian mixture n=500 d=10 (runtime-benchmark data, rep 0)",clustered,500,10,0,69.448241478,LP over all pairs with odd-set cuts and column generation; all reduced costs >= -1e-7

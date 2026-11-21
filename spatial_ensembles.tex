@@ -1,0 +1,54 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Spatially balanced baselines (55 datasets, 25 folds). Median per-dataset difference of LPM (local pivotal method, LPM2) and KSRUS ($k$-means-stratified RUS) to RUS and to MUS-CS; bold: Holm-adjusted Wilcoxon $p<0.05$ (family: 2 methods $\times$ 2 references per classifier and metric). A bold 0.000 means that the median dataset is unchanged (absolute difference $\leq 0.0005$) while the non-zero differences are systematically signed; win/tie/loss counts and exact $p$-values are given in \texttt{results/revision/x4\_summary.csv} of the repository.}
+\label{tab:x4}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & \multicolumn{4}{c}{G-mean} & \multicolumn{4}{c}{ROC-AUC}\\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Classifier & \multicolumn{2}{c}{LPM vs} & \multicolumn{2}{c}{KSRUS vs} & \multicolumn{2}{c}{LPM vs} & \multicolumn{2}{c}{KSRUS vs}\\
+ & RUS & MUS-CS & RUS & MUS-CS & RUS & MUS-CS & RUS & MUS-CS\\
+\midrule
+CART & +0.001 & 0.000 & 0.000 & 0.000 & +0.001 & 0.000 & 0.000 & 0.000\\
+kNN & +0.002 & 0.000 & 0.000 & 0.000 & \textbf{+0.002} & 0.000 & 0.000 & \textbf{$-$0.002}\\
+SVM & 0.000 & 0.000 & 0.000 & 0.000 & \textbf{+0.001} & 0.000 & 0.000 & 0.000\\
+LR & \textbf{+0.001} & 0.000 & +0.001 & 0.000 & \textbf{+0.001} & 0.000 & 0.000 & \textbf{$-$0.001}\\
+RF & +0.001 & 0.000 & +0.001 & 0.000 & \textbf{0.000} & 0.000 & 0.000 & \textbf{0.000}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\caption{Ensembles of $T=10$ undersampled subsets (55 datasets, 25 folds; mean of member scores). Columns 3--6: median per-dataset difference ensemble $-$ single subset (main-run seed) and ensemble $-$ RUS ensemble; columns 7--8: median over datasets of the across-seed SD of a single subset's G-mean and ROC-AUC (10 members). Bold: Holm-adjusted Wilcoxon $p<0.05$. A bold 0.000 means that the median dataset is unchanged (absolute difference $\leq 0.0005$) while the non-zero differences are systematically signed; win/tie/loss counts and exact $p$-values are given in \texttt{results/revision/x5\_summary.csv} of the repository.}
+\label{tab:x5}
+\begin{tabular}{llrrrrrr}
+\toprule
+ & & \multicolumn{2}{c}{Ens.\ $-$ single} & \multicolumn{2}{c}{Ens.\ $-$ RUS ens.} & \multicolumn{2}{c}{SD single subset}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+Classifier & Sampler & G-mean & AUC & G-mean & AUC & G-mean & AUC\\
+\midrule
+CART & RUS & \textbf{+0.023} & \textbf{+0.063} & -- & -- & 0.039 & 0.039\\
+ & MUS-CS & \textbf{+0.022} & \textbf{+0.067} & 0.000 & $-$0.001 & 0.036 & 0.035\\
+ & LPM & \textbf{+0.021} & \textbf{+0.062} & 0.000 & 0.000 & 0.036 & 0.035\\
+\addlinespace
+kNN & RUS & \textbf{+0.008} & \textbf{+0.017} & -- & -- & 0.023 & 0.015\\
+ & MUS-CS & 0.000 & \textbf{+0.009} & \textbf{$-$0.002} & 0.000 & 0.019 & 0.011\\
+ & LPM & +0.002 & \textbf{+0.010} & 0.000 & 0.000 & 0.020 & 0.011\\
+\addlinespace
+SVM & RUS & \textbf{+0.002} & \textbf{+0.002} & -- & -- & 0.015 & 0.007\\
+ & MUS-CS & \textbf{+0.001} & \textbf{+0.001} & 0.000 & 0.000 & 0.011 & 0.004\\
+ & LPM & \textbf{+0.001} & \textbf{0.000} & 0.000 & 0.000 & 0.011 & 0.004\\
+\addlinespace
+LR & RUS & \textbf{+0.001} & \textbf{+0.001} & -- & -- & 0.017 & 0.007\\
+ & MUS-CS & \textbf{+0.001} & \textbf{0.000} & +0.001 & 0.000 & 0.011 & 0.004\\
+ & LPM & \textbf{0.000} & \textbf{0.000} & +0.001 & 0.000 & 0.011 & 0.004\\
+\addlinespace
+RF & RUS & \textbf{+0.007} & \textbf{+0.004} & -- & -- & 0.023 & 0.010\\
+ & MUS-CS & \textbf{+0.005} & \textbf{+0.004} & +0.001 & 0.000 & 0.018 & 0.009\\
+ & LPM & \textbf{+0.004} & \textbf{+0.003} & 0.000 & 0.000 & 0.017 & 0.008\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,56 @@
+\subsection{Additional tables and figures}\label{app:results}
+
+This subsection collects the selections of all methods on the two-dimensional example, the Bayesian posteriors, the robustness analyses, the comparison with the non-undersampling references, the dataset-level correlations, the selection overlaps, the ablation results, the critical-difference diagrams and the full boundary--coverage map including the methods that do not control the output size.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figS_selection_illustration.pdf}
+\caption{Majority instances retained by random undersampling, NearMiss-1, ClusterCentroids (hard voting: the instance nearest each centroid) and the four matching undersamplers on a two-dimensional example with 520 majority and 58 minority instances; every method retains 58 majority instances. The boundary arm (e, f) anchors every minority instance with an exclusive nearby majority counterpart, whereas NearMiss-1 (c) concentrates on the densest part of the boundary; the coverage arm (g, h) thins the majority class evenly.}\label{fig:illustration}
+\end{figure}
+
+\input{tables/stats_wilcoxon_holm_auc}
+\input{tables/stats_bayes}
+\input{tables/bayes_rope_sensitivity}
+\input{tables/stats_robustness}
+\input{tables/duplicates}
+\input{tables/family_bootstrap}
+\input{tables/pooled_confusion}
+\input{tables/stats_reference_smote_cw}
+\input{tables/meta_gain_correlations}
+\input{tables/per_dataset_differences}
+\input{tables/selection_overlap}
+\input{tables/wasserstein_matching}
+\input{tables/stats_ablation}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figS_cd_gmean.pdf}
+\caption{Critical-difference diagrams of the average G-mean ranks of the sixteen undersampling-family methods over 55 datasets, one panel per classifier (1 = best). Methods joined by a bar do not differ by more than the Nemenyi critical difference (CD $=3.11$; $\alpha=0.05$).}\label{fig:cd_gmean}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figS_cd_auc.pdf}
+\caption{Critical-difference diagrams of the average ROC-AUC ranks of the sixteen undersampling-family methods over 55 datasets, one panel per classifier (1 = best; Nemenyi CD $=3.11$, $\alpha=0.05$).}\label{fig:cd_auc}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_ablation_ratio.pdf}
+\caption{Target-ratio ablation: mean G-mean and ROC-AUC and average rank among the 18 ratio configurations as functions of the target majority:minority ratio, for CART, $k$-NN and SVM.}\label{fig:ablation}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figS_map_full.pdf}
+\caption{Boundary--coverage map of all fifteen undersamplers and no resampling (medians over the 55 datasets). Filled marks: balancing methods, which target as many majority as minority instances (NearMiss-3 falls short of the target on 26 datasets). Open marks: methods that do not control the output size, labelled with the median ratio of retained majority to minority instances; they keep up to 16 times more majority instances than the balancing methods, which lowers their coverage errors mechanically, so their positions are not comparable with those of the balancing methods in Figure~\ref{fig:mechanism}(a). The inset enlarges the cluster near BP $=1$, CE $=0$.}\label{fig:map_full}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/figS_runtime_grid.pdf}
+\caption{Median resampling time per training fold against the median majority size of the training folds, one point per dataset (log--log), with least-squares slopes (95\% confidence intervals) and median times; measured under parallel load. SMOTE is included as an oversampling reference.}\label{fig:runtime_grid}
+\end{figure}
+
+\input{tables/runtime_benchmark}
+\input{tables/runtime_scaling_isolated}

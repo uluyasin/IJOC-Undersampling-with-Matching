@@ -1,0 +1,81 @@
+\begin{table}[!htbp]
+\centering
+\caption{G-mean, secondary reference comparison: each MUS method against SMOTE oversampling and cost-sensitive class weighting (CW; undefined for kNN). Wilcoxon signed-rank (zero-split) on per-dataset means ($N=55$); $p_\mathrm{H}$ = Holm over the MUS$\times$reference comparisons per classifier; bold: $p_\mathrm{H}<0.05$.}
+\label{tab:reference_gmean}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llrcrrcr}
+\toprule
+ & & \multicolumn{3}{c}{vs SMOTE} & \multicolumn{3}{c}{vs CW} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Method & Clf. & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ \\
+\midrule
+MUS-BS & CART & $-$0.0014 & 20/7/28 & 1.000 & 0.0000 & 23/7/25 & 1.000 \\
+ & kNN & $-$0.0612 & 3/7/45 & \textbf{$<$0.001} & -- & -- & -- \\
+ & SVM & $-$0.0448 & 8/5/42 & \textbf{$<$0.001} & $-$0.0448 & 8/5/42 & \textbf{$<$0.001} \\
+ & LR & $-$0.0519 & 5/8/42 & \textbf{$<$0.001} & $-$0.0543 & 6/7/42 & \textbf{$<$0.001} \\
+ & RF & 0.0000 & 24/10/21 & 1.000 & $-$0.0001 & 21/11/23 & 1.000 \\
+\midrule
+MUS-BO & CART & $-$0.0025 & 20/5/30 & 1.000 & $-$0.0007 & 22/6/27 & 1.000 \\
+ & kNN & $-$0.0605 & 3/8/44 & \textbf{$<$0.001} & -- & -- & -- \\
+ & SVM & $-$0.0466 & 7/5/43 & \textbf{$<$0.001} & $-$0.0556 & 8/5/42 & \textbf{$<$0.001} \\
+ & LR & $-$0.0546 & 5/9/41 & \textbf{$<$0.001} & $-$0.0517 & 5/8/42 & \textbf{$<$0.001} \\
+ & RF & 0.0000 & 24/10/21 & 1.000 & $-$0.0001 & 21/12/22 & 1.000 \\
+\midrule
+MUS-CS & CART & +0.0062 & 33/5/17 & \textbf{0.014} & +0.0261 & 38/3/14 & \textbf{$<$0.001} \\
+ & kNN & $-$0.0057 & 20/4/31 & 0.326 & -- & -- & -- \\
+ & SVM & $-$0.0048 & 17/6/32 & 0.208 & $-$0.0062 & 14/10/31 & 0.188 \\
+ & LR & $-$0.0106 & 7/8/40 & \textbf{$<$0.001} & $-$0.0113 & 8/7/40 & \textbf{$<$0.001} \\
+ & RF & +0.0141 & 38/10/7 & \textbf{$<$0.001} & +0.0113 & 32/10/13 & \textbf{$<$0.001} \\
+\midrule
+MUS-CO & CART & +0.0078 & 35/4/16 & \textbf{0.003} & +0.0272 & 39/5/11 & \textbf{$<$0.001} \\
+ & kNN & $-$0.0055 & 17/6/32 & 0.326 & -- & -- & -- \\
+ & SVM & $-$0.0020 & 17/9/29 & 0.208 & $-$0.0058 & 15/7/33 & 0.188 \\
+ & LR & $-$0.0110 & 10/7/38 & \textbf{$<$0.001} & $-$0.0111 & 9/7/39 & \textbf{$<$0.001} \\
+ & RF & +0.0130 & 39/8/8 & \textbf{$<$0.001} & +0.0081 & 32/9/14 & \textbf{$<$0.001} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{ROC-AUC, secondary reference comparison: each MUS method against SMOTE oversampling and cost-sensitive class weighting (CW; undefined for kNN). Wilcoxon signed-rank (zero-split) on per-dataset means ($N=55$); $p_\mathrm{H}$ = Holm over the MUS$\times$reference comparisons per classifier; bold: $p_\mathrm{H}<0.05$.}
+\label{tab:reference_auc}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llrcrrcr}
+\toprule
+ & & \multicolumn{3}{c}{vs SMOTE} & \multicolumn{3}{c}{vs CW} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Method & Clf. & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ \\
+\midrule
+MUS-BS & CART & $-$0.0205 & 9/7/39 & \textbf{$<$0.001} & $-$0.0081 & 16/5/34 & 0.073 \\
+ & kNN & $-$0.0518 & 5/8/42 & \textbf{$<$0.001} & -- & -- & -- \\
+ & SVM & $-$0.0045 & 6/16/33 & \textbf{$<$0.001} & $-$0.0064 & 2/17/36 & \textbf{$<$0.001} \\
+ & LR & $-$0.0052 & 8/14/33 & \textbf{$<$0.001} & $-$0.0036 & 10/13/32 & \textbf{$<$0.001} \\
+ & RF & $-$0.0293 & 1/16/38 & \textbf{$<$0.001} & $-$0.0292 & 0/17/38 & \textbf{$<$0.001} \\
+\midrule
+MUS-BO & CART & $-$0.0198 & 10/5/40 & \textbf{$<$0.001} & $-$0.0067 & 16/6/33 & 0.073 \\
+ & kNN & $-$0.0487 & 5/9/41 & \textbf{$<$0.001} & -- & -- & -- \\
+ & SVM & $-$0.0067 & 5/17/33 & \textbf{$<$0.001} & $-$0.0078 & 3/16/36 & \textbf{$<$0.001} \\
+ & LR & $-$0.0045 & 9/12/34 & \textbf{$<$0.001} & $-$0.0040 & 12/10/33 & \textbf{$<$0.001} \\
+ & RF & $-$0.0356 & 1/16/38 & \textbf{$<$0.001} & $-$0.0317 & 0/16/39 & \textbf{$<$0.001} \\
+\midrule
+MUS-CS & CART & +0.0037 & 31/4/20 & 0.073 & +0.0154 & 35/5/15 & \textbf{$<$0.001} \\
+ & kNN & 0.0000 & 23/12/20 & 1.000 & -- & -- & -- \\
+ & SVM & $-$0.0005 & 12/17/26 & 0.075 & $-$0.0011 & 8/19/28 & \textbf{0.003} \\
+ & LR & $-$0.0041 & 6/16/33 & \textbf{$<$0.001} & $-$0.0040 & 4/14/37 & \textbf{$<$0.001} \\
+ & RF & $-$0.0007 & 7/22/26 & \textbf{$<$0.001} & $-$0.0009 & 7/21/27 & \textbf{0.001} \\
+\midrule
+MUS-CO & CART & +0.0039 & 31/4/20 & 0.073 & +0.0175 & 36/6/13 & \textbf{$<$0.001} \\
+ & kNN & 0.0000 & 24/11/20 & 1.000 & -- & -- & -- \\
+ & SVM & $-$0.0002 & 13/19/23 & 0.075 & $-$0.0018 & 6/19/30 & \textbf{$<$0.001} \\
+ & LR & $-$0.0037 & 7/14/34 & \textbf{$<$0.001} & $-$0.0036 & 8/14/33 & \textbf{$<$0.001} \\
+ & RF & $-$0.0009 & 7/21/27 & \textbf{$<$0.001} & $-$0.0008 & 8/20/27 & \textbf{0.003} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

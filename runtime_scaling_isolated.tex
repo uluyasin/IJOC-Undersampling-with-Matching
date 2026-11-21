@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Synthetic scaling in isolation: resampling time in seconds for two Gaussian classes in ten dimensions with imbalance ratio 20 (one process with one thread; median of three runs up to 10{,}000 majority instances, one run above). $>$600: stopped after 600\,s; mem.: the dense cost matrix exceeds the memory limit of our implementation; --: not run because the method had failed at a smaller size.}
+\label{tab:scaling}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & 1{,}000 & 3{,}000 & 10{,}000 & 30{,}000 & 100{,}000 \\
+\midrule
+RUS & 0.000706 & 0.000873 & 0.00144 & 0.00308 & 0.00824 \\
+NM1 & 0.00201 & 0.00782 & 0.0589 & 0.374 & 13.2 \\
+CC & 0.00621 & 0.027 & 0.219 & 14.7 & 218 \\
+\textbf{MUS-BS} & 0.00172 & 0.00495 & 0.0538 & 0.779 & 65.4 \\
+\textbf{MUS-BO} & 0.00128 & 0.00575 & 0.0643 & 0.696 & mem. \\
+\textbf{MUS-CS} & 0.0302 & 0.17 & 1.19 & 40.3 & 445 \\
+\textbf{MUS-CO} & 0.117 & 0.537 & 8.38 & 82.3 & $>$600 \\
+\bottomrule
+\end{tabular}
+\end{table}

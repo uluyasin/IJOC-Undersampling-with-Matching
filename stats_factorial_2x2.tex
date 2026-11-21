@@ -1,0 +1,40 @@
+\begin{table}[!htbp]
+\centering
+\caption{2$\times$2 factorial contrasts among the MUS methods (Wilcoxon signed-rank, zero-split, on per-dataset means; $N=55$). $\tilde\Delta$ = median difference (first $-$ second); W/T/L from the first method's perspective (tie: $|\Delta|<0.001$); $p_\mathrm{H}$ = Holm-adjusted over the 4 contrasts per classifier and metric; bold: $p_\mathrm{H}<0.05$.}
+\label{tab:factorial}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llrcrrcr}
+\toprule
+ & & \multicolumn{3}{c}{G-mean} & \multicolumn{3}{c}{ROC-AUC} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Contrast & Clf. & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ \\
+\midrule
+MUS-BS vs MUS-BO & CART & 0.0000 & 23/18/14 & 0.342 & 0.0000 & 23/18/14 & 0.304 \\
+ & kNN & 0.0000 & 15/28/12 & 0.795 & 0.0000 & 15/26/14 & 1.000 \\
+ & SVM & 0.0000 & 17/25/13 & 0.557 & 0.0000 & 16/31/8 & 0.288 \\
+ & LR & 0.0000 & 18/23/14 & 0.507 & 0.0000 & 13/28/14 & 0.756 \\
+ & RF & 0.0000 & 13/24/18 & 0.576 & 0.0000 & 13/28/14 & 1.000 \\
+\midrule
+MUS-CS vs MUS-CO & CART & $-$0.0002 & 20/13/22 & 0.535 & $-$0.0001 & 19/12/24 & 0.586 \\
+ & kNN & 0.0000 & 18/15/22 & 0.795 & 0.0000 & 15/22/18 & 1.000 \\
+ & SVM & $-$0.0001 & 21/14/20 & 0.920 & 0.0000 & 8/38/9 & 0.487 \\
+ & LR & 0.0000 & 16/18/21 & 0.507 & 0.0000 & 9/30/16 & 0.756 \\
+ & RF & 0.0000 & 18/19/18 & 0.760 & 0.0000 & 14/29/12 & 1.000 \\
+\midrule
+MUS-BS vs MUS-CS & CART & $-$0.0390 & 12/5/38 & \textbf{$<$0.001} & $-$0.0335 & 12/5/38 & \textbf{$<$0.001} \\
+ & kNN & $-$0.0632 & 5/6/44 & \textbf{$<$0.001} & $-$0.0545 & 4/11/40 & \textbf{$<$0.001} \\
+ & SVM & $-$0.0506 & 6/5/44 & \textbf{$<$0.001} & $-$0.0037 & 6/15/34 & \textbf{$<$0.001} \\
+ & LR & $-$0.0257 & 12/8/35 & \textbf{$<$0.001} & $-$0.0001 & 14/14/27 & 0.154 \\
+ & RF & $-$0.0127 & 9/8/38 & \textbf{$<$0.001} & $-$0.0086 & 7/15/33 & \textbf{$<$0.001} \\
+\midrule
+MUS-BO vs MUS-CO & CART & $-$0.0324 & 13/3/39 & \textbf{$<$0.001} & $-$0.0293 & 12/3/40 & \textbf{$<$0.001} \\
+ & kNN & $-$0.0602 & 6/6/43 & \textbf{$<$0.001} & $-$0.0534 & 5/11/39 & \textbf{$<$0.001} \\
+ & SVM & $-$0.0504 & 4/7/44 & \textbf{$<$0.001} & $-$0.0052 & 7/15/33 & \textbf{$<$0.001} \\
+ & LR & $-$0.0377 & 9/7/39 & \textbf{$<$0.001} & $-$0.0002 & 18/10/27 & 0.154 \\
+ & RF & $-$0.0258 & 10/8/37 & \textbf{$<$0.001} & $-$0.0098 & 6/14/35 & \textbf{$<$0.001} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

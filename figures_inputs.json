@@ -1,0 +1,19 @@
+{
+ "perfold": "results/results_main_final.parquet",
+ "dsmeans": "results/analysis/stats_per_dataset_means.csv",
+ "factorial": "results/analysis/stats_factorial_2x2.csv",
+ "bayes": "results/analysis/stats_bayes.csv",
+ "ranks": "results/analysis/stats_ranks_friedman.csv",
+ "wilcoxon": "results/analysis/stats_wilcoxon_holm.csv",
+ "diag_ds": "results/analysis/diag_by_dataset.csv",
+ "diag_sum": "results/analysis/diag_summary.csv",
+ "diag_perf": "results/analysis/diag_performance_link.csv",
+ "diag_perf_ds": "results/analysis/diag_performance_link_by_dataset.csv",
+ "diag_gain": "results/analysis/diag_gain_link.csv",
+ "gains_ds": "results/analysis/meta_gains_per_dataset.csv",
+ "gain_corr": "results/analysis/meta_gain_correlations.csv",
+ "complexity": "data/dataset_complexity.csv",
+ "rt_sum": "results/analysis/runtime_benchmark.csv",
+ "rt_ds": "results/analysis/runtime_by_dataset.csv",
+ "matchsampling": "src/matchsampling.py"
+}

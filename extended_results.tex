@@ -1,0 +1,68 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.65in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[authoryear,round]{natbib}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,multirow,array}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[hidelinks]{hyperref}
+
+% Macros of the full-length manuscript (copied unchanged)
+\newcommand{\MUSBS}{\textsc{mus-bs}}
+\newcommand{\MUSBO}{\textsc{mus-bo}}
+\newcommand{\MUSCS}{\textsc{mus-cs}}
+\newcommand{\MUSCO}{\textsc{mus-co}}
+\newcommand{\RUS}{\textsc{rus}}
+\newcommand{\Wone}{W_1}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\cost}{cost}
+\DeclareMathOperator{\diam}{diam}
+
+\title{Extended Results for ``Boundary or Coverage, Stable or Optimal? A Computational Study of Matching-Based Undersampling for Imbalanced Classification''}
+\author{Anonymous (double-anonymous review)}
+\date{}
+
+% Numbering with the prefix E: the main paper and its Online Supplement cite this document as Section E1, Table E1, Figure E1, Algorithm E1
+\renewcommand{\thesection}{E\arabic{section}}
+\renewcommand{\thetable}{E\arabic{table}}
+\renewcommand{\thefigure}{E\arabic{figure}}
+\renewcommand{\thealgorithm}{E\arabic{algorithm}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Preface}
+
+This document accompanies the paper ``Boundary or Coverage, Stable or Optimal? A Computational Study of Matching-Based Undersampling for Imbalanced Classification'' (the main paper) and its Online Supplement. It is part of the paper's code and data repository (folder \texttt{docs/extended\_results}) and contains the complete description of the experimental design, all result tables and figures, and the additional experiments. Figures of the main paper are referred to rather than repeated, except Figure~4 of the main paper (Figure~\ref{fig:mechanism} here), whose panels the detailed text discusses one by one. The document introduces no new results: its text, tables and figures are those of the full-length version of the study, and every number can be traced to the result files written by the scripts of the repository, as described in the repository's \texttt{README.md}. References to the propositions, figures and sections of the main paper and to its Online Supplement are given in plain text. The sections, tables, figures and algorithms of this document are numbered with the prefix E (Section~E1, Table~E1, Figure~E1, Algorithm~E1), the form in which the main paper and the Online Supplement cite them. The study plan, fixed before the benchmark was run, is in \texttt{docs/study\_plan.md} of the repository.
+
+Section~\ref{sec:design:data} describes the benchmark datasets, Section~\ref{sec:design} the experimental design, Section~\ref{sec:results} all results, and Section~\ref{app:implementation} the implementation of the four matching undersamplers. The notation follows the main paper: \MUSBS{} and \MUSBO{} are the stable and optimal variants of the boundary arm (minority--majority matching), \MUSCS{} and \MUSCO{} those of the coverage arm (matching within the majority class), and \RUS{} is random undersampling.
+
+\tableofcontents
+
+\clearpage
+\input{sections/e1_datasets}
+
+\clearpage
+\input{sections/e2_design}
+
+\clearpage
+\input{sections/e3_results}
+
+\clearpage
+\input{sections/e3_additional}
+
+\clearpage
+\input{sections/e4_implementation}
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

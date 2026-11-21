@@ -1,0 +1,60 @@
+\section{Implementation details}\label{app:implementation}
+
+Algorithms~\ref{alg:boundary} and~\ref{alg:coverage} summarise the two arms. Distances are computed once per call with a bitwise-symmetric routine so that both sides of a market see identical values, and ties are broken by the lexicographic order (distance, index) throughout.
+
+\begin{algorithm}[htbp]
+\caption{Boundary arm: \MUSBS{} and \MUSBO}\label{alg:boundary}
+\begin{algorithmic}[1]
+\Require minority $P=\{x_1,\dots,x_p\}$, majority $N=\{z_1,\dots,z_n\}$, target size $m\le n$, seed
+\State capacities $q_i\in\{\lfloor m/p\rfloor,\lceil m/p\rceil\}$, $\sum_i q_i=m$ (remainder by seeded permutation)
+\If{\MUSBS}
+  \State scan pairs $(i,j)$ in increasing order of $(d(x_i,z_j),i,j)$ \Comment{lazy heap over exact candidate lists}
+  \State accept $(i,j)$ if $i$ has a free position and $z_j$ is unassigned
+  \State $S\gets$ assigned majority instances \Comment{unique stable matching, Proposition~1 of the main paper}
+\Else \Comment{\MUSBO}
+  \State replicate $x_i$ $q_i$ times; $C_{tj}\gets d(x_{i(t)},z_j)$ for the $m$ copies $t$
+  \State $\sigma\gets$ rectangular assignment minimising $\sum_t C_{t\sigma(t)}$ \Comment{\texttt{linear\_sum\_assignment}}
+  \State $S\gets\{z_{\sigma(t)}:t=1,\dots,m\}$ \Comment{$\Wone$ projection, Proposition~3 of the main paper}
+\EndIf
+\State \Return $P\cup S$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[htbp]
+\caption{Coverage arm: \MUSCS{} and \MUSCO}\label{alg:coverage}
+\begin{algorithmic}[1]
+\Require majority $N$, minority $P$, target size $m\le n$, keep rule, seed, candidate degree $k$ (\MUSCO)
+\State $S\gets N$
+\While{$|S|>m$}
+  \If{\MUSCS} \State $M\gets$ greedy closest-pair matching of $S$ \Comment{unique stable roommates matching, Proposition~4 of the main paper}
+  \Else \State $M\gets$ minimum-weight maximum-cardinality matching of $G_k(S)$ \Comment{LP with odd-set cuts; Edmonds fallback}
+  \EndIf
+  \State $r\gets\min\{|M|,\ |S|-m\}$ \Comment{$r<|M|$ only in the final partial round}
+  \For{each of the $r$ cheapest pairs $\{a,b\}\in M$}
+     \State delete $b$ (keep rule \texttt{random}: seeded coin; \texttt{boundary}: keep the member closer to $P$)
+  \EndFor
+\EndWhile
+\State \Return $P\cup S$
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Exact solution of the \MUSCO{} rounds} Each round solves the perfect-matching linear programme on the candidate graph $G_k$ (with a zero-cost dummy vertex when $|S|$ is odd), adding violated odd-set inequalities---odd connected components of the support and minimum odd cuts from a Gomory--Hu tree \citep{padberg1982odd,gomory1961multi}---and re-solving with the HiGHS dual simplex method \citep{huangfu2018parallelizing}. An integral optimum is a minimum-weight perfect matching of $G_k$ because the odd-set inequalities are valid for the perfect-matching polytope \citep{edmonds1965maximum,grotschel1985solving}. If no integral optimum is reached within 50 linear programmes, the same instance is solved by Edmonds' algorithm in NetworkX \citep{hagberg2008exploring}. The switch depends only on the instance, never on running time, so the output is reproducible.
+
+\paragraph{Candidate degree} Table~\ref{tab:ksweep} reports the relative gap between the optimal matching cost on $G_k$ and the optimal cost on the complete graph, the latter certified by linear programming with column generation over all pairs.
+
+\begin{table}[htbp]
+\centering
+\caption{Relative gap (\%) between the minimum-weight matching on the candidate graph $G_k$ and on the complete graph. Uniform: 14 instances with 500--5000 points in dimension 10 or 40; clustered: one Gaussian-mixture instance with 500 points.}\label{tab:ksweep}
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{Uniform} & \multicolumn{2}{c}{Clustered} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+$k$ & mean & max & mean & max \\
+\midrule
+5  & 0.1078 & 0.1944 & 1.0981 & 1.0981 \\
+10 & 0.0125 & 0.0261 & 0.9650 & 0.9650 \\
+20 & 0.0008 & 0.0043 & 0.0000 & 0.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\caption{Pooled confusion matrices: verdicts of the two-sided Wilcoxon signed-rank test (zero-split) on per-dataset means of metrics computed from confusion matrices pooled over the 5 folds of each repeat and averaged over the 5 repeats; Holm over the 8 comparisons (4 MUS methods $\times$ \{RUS, CC\}) per classifier and metric. $-$/$+$: MUS significantly worse/better ($p_\mathrm{Holm}<0.05$); $\cdot$: n.s. The same verdicts are obtained from fold-averaged metrics in 120 of 120 tests.}
+\label{tab:a2_pooled}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{llccccccccccccccc}
+\toprule
+ & & \multicolumn{5}{c}{G-mean} & \multicolumn{5}{c}{F1} & \multicolumn{5}{c}{MCC} \\
+\cmidrule(lr){3-7}\cmidrule(lr){8-12}\cmidrule(lr){13-17}
+Method & vs & CART & kNN & SVM & LR & RF & CART & kNN & SVM & LR & RF & CART & kNN & SVM & LR & RF \\
+\midrule
+MUS-BS & RUS & $-$ & $-$ & $-$ & $-$ & $-$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $-$ & $\cdot$ & $\cdot$ & $\cdot$ \\
+MUS-BO & RUS & $-$ & $-$ & $-$ & $-$ & $-$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $-$ & $\cdot$ & $\cdot$ & $\cdot$ \\
+MUS-CS & RUS & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $+$ & $\cdot$ & $+$ & $+$ & $+$ & $+$ & $\cdot$ & $+$ & $+$ & $+$ \\
+MUS-CO & RUS & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $+$ & $\cdot$ & $+$ & $+$ & $+$ & $+$ & $\cdot$ & $+$ & $+$ & $+$ \\
+\midrule
+MUS-BS & CC & $-$ & $-$ & $-$ & $-$ & $-$ & $\cdot$ & $-$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $-$ & $\cdot$ & $\cdot$ & $\cdot$ \\
+MUS-BO & CC & $-$ & $-$ & $-$ & $-$ & $-$ & $\cdot$ & $-$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $-$ & $\cdot$ & $\cdot$ & $\cdot$ \\
+MUS-CS & CC & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ \\
+MUS-CO & CC & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ & $\cdot$ \\
+\bottomrule
+\end{tabular}
+\end{table}

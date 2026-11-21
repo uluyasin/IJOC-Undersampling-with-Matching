@@ -1,0 +1,40 @@
+\begin{table}[!htbp]
+\centering
+\caption{ROC-AUC: two-sided Wilcoxon signed-rank tests (zero-split) of each MUS method against random undersampling (RUS), ClusterCentroids (CC) and the best non-MUS method (lowest average rank) on the per-dataset means ($N=55$). $\tilde\Delta$ = median difference (MUS $-$ comparator); W/T/L = wins/ties/losses of the MUS method (tie: $|\Delta|<0.001$); $p_\mathrm{H}$ = Holm-adjusted $p$ over the 48 MUS-vs-non-MUS comparisons per classifier; bold: $p_\mathrm{H}<0.05$.}
+\label{tab:wilcoxon_auc}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llrcrrcrlrcr}
+\toprule
+ & & \multicolumn{3}{c}{vs RUS} & \multicolumn{3}{c}{vs CC} & \multicolumn{4}{c}{vs best non-MUS} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(lr){9-12}
+Method & Clf. & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ & Best & $\tilde\Delta$ & W/T/L & $p_\mathrm{H}$ \\
+\midrule
+MUS-BS & CART & $-$0.0165 & 17/3/35 & \textbf{0.001} & $-$0.0139 & 10/7/38 & \textbf{0.001} & IHT & $-$0.0291 & 9/5/41 & \textbf{$<$0.001} \\
+ & kNN & $-$0.0556 & 9/9/37 & \textbf{$<$0.001} & $-$0.0591 & 6/9/40 & \textbf{$<$0.001} & CC & $-$0.0591 & 6/9/40 & \textbf{$<$0.001} \\
+ & SVM & $-$0.0013 & 10/14/31 & \textbf{0.001} & $-$0.0037 & 8/16/31 & \textbf{$<$0.001} & TL & $-$0.0062 & 3/16/36 & \textbf{$<$0.001} \\
+ & LR & $-$0.0001 & 17/12/26 & 1.000 & 0.0000 & 17/13/25 & 1.000 & NONE & $-$0.0031 & 11/14/30 & 0.067 \\
+ & RF & $-$0.0188 & 8/14/33 & \textbf{$<$0.001} & $-$0.0112 & 7/14/34 & \textbf{$<$0.001} & TL & $-$0.0342 & 0/16/39 & \textbf{$<$0.001} \\
+\midrule
+MUS-BO & CART & $-$0.0284 & 16/5/34 & \textbf{0.002} & $-$0.0196 & 9/6/40 & \textbf{$<$0.001} & IHT & $-$0.0336 & 7/4/44 & \textbf{$<$0.001} \\
+ & kNN & $-$0.0556 & 8/9/38 & \textbf{$<$0.001} & $-$0.0528 & 6/9/40 & \textbf{$<$0.001} & CC & $-$0.0528 & 6/9/40 & \textbf{$<$0.001} \\
+ & SVM & $-$0.0032 & 9/15/31 & \textbf{$<$0.001} & $-$0.0048 & 8/16/31 & \textbf{$<$0.001} & TL & $-$0.0044 & 3/17/35 & \textbf{$<$0.001} \\
+ & LR & $-$0.0003 & 17/12/26 & 0.970 & $-$0.0002 & 18/11/26 & 1.000 & NONE & $-$0.0035 & 12/12/31 & 0.054 \\
+ & RF & $-$0.0083 & 8/14/33 & \textbf{$<$0.001} & $-$0.0078 & 8/14/33 & \textbf{0.001} & TL & $-$0.0326 & 1/16/38 & \textbf{$<$0.001} \\
+\midrule
+MUS-CS & CART & +0.0024 & 28/9/18 & 1.000 & +0.0002 & 25/8/22 & 1.000 & IHT & $-$0.0045 & 16/5/34 & 0.206 \\
+ & kNN & +0.0022 & 32/14/9 & \textbf{0.026} & 0.0000 & 20/13/22 & 1.000 & CC & 0.0000 & 20/13/22 & 1.000 \\
+ & SVM & +0.0003 & 24/23/8 & \textbf{0.041} & 0.0000 & 17/27/11 & 1.000 & TL & $-$0.0002 & 13/18/24 & 1.000 \\
+ & LR & +0.0010 & 27/21/7 & \textbf{0.006} & 0.0000 & 18/24/13 & 1.000 & NONE & $-$0.0045 & 2/17/36 & \textbf{$<$0.001} \\
+ & RF & +0.0002 & 20/29/6 & 0.058 & 0.0000 & 16/25/14 & 1.000 & TL & $-$0.0008 & 8/20/27 & \textbf{0.047} \\
+\midrule
+MUS-CO & CART & +0.0023 & 30/6/19 & 1.000 & 0.0000 & 25/6/24 & 1.000 & IHT & $-$0.0078 & 15/3/37 & 0.117 \\
+ & kNN & +0.0022 & 33/12/10 & \textbf{0.030} & 0.0000 & 21/12/22 & 1.000 & CC & 0.0000 & 21/12/22 & 1.000 \\
+ & SVM & +0.0002 & 23/22/10 & 0.439 & 0.0000 & 16/26/13 & 1.000 & TL & $-$0.0001 & 13/19/23 & 1.000 \\
+ & LR & +0.0011 & 29/18/8 & 0.064 & 0.0000 & 22/24/9 & 1.000 & NONE & $-$0.0034 & 4/16/35 & \textbf{$<$0.001} \\
+ & RF & +0.0004 & 22/27/6 & \textbf{0.008} & 0.0000 & 18/27/10 & 1.000 & TL & $-$0.0006 & 11/20/24 & 0.233 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

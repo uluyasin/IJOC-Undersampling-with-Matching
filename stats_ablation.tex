@@ -1,0 +1,36 @@
+\begin{table}[!htbp]
+\centering
+\caption{Ablation: mean difference (variant $-$ default) of the per-dataset means ($N=55$) for the target majority:minority ratio (default 1; capped at the available majority) and the two design variants. Bold: Holm-adjusted Wilcoxon $p<0.05$ (Holm within each method family, classifier and metric). Keep boundary member: the coverage arm keeps the pair member closer to the minority class (default: random member); asymmetric pref.: class-conditional Mahalanobis preferences in MUS-BS (default: symmetric). The last column gives the number of datasets on which the ratio cap binds (no majority removal) in at least one fold.}
+\label{tab:ablation}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{llrrrrrrr}
+\toprule
+ & & \multicolumn{3}{c}{G-mean} & \multicolumn{3}{c}{ROC-AUC} & \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Family & Variant & CART & kNN & SVM & CART & kNN & SVM & Capped \\
+\midrule
+RUS & ratio 1.5 & +0.0039 & $-$0.0032 & \textbf{$-$0.0252} & +0.0067 & \textbf{+0.0039} & \textbf{+0.0054} & 0 \\
+ & ratio 2 & $-$0.0015 & $-$0.0150 & \textbf{$-$0.0605} & +0.0061 & \textbf{+0.0062} & \textbf{+0.0095} & 5 \\
+\midrule
+NM1 & ratio 1.5 & \textbf{+0.0270} & +0.0007 & +0.0146 & \textbf{+0.0198} & \textbf{+0.0224} & \textbf{+0.0197} & 0 \\
+ & ratio 2 & \textbf{+0.0378} & $-$0.0095 & +0.0074 & \textbf{+0.0315} & \textbf{+0.0343} & \textbf{+0.0328} & 5 \\
+\midrule
+CC & ratio 1.5 & +0.0012 & $-$0.0087 & \textbf{$-$0.0397} & +0.0040 & +0.0015 & \textbf{+0.0057} & 0 \\
+ & ratio 2 & $-$0.0058 & \textbf{$-$0.0257} & \textbf{$-$0.0827} & +0.0022 & +0.0035 & \textbf{+0.0124} & 5 \\
+\midrule
+MUS-BS & ratio 1.5 & \textbf{+0.0070} & $-$0.0296 & \textbf{$-$0.1243} & \textbf{+0.0102} & \textbf{+0.0208} & \textbf{+0.0076} & 0 \\
+ & ratio 2 & $-$0.0039 & $-$0.0591 & \textbf{$-$0.1388} & \textbf{+0.0087} & \textbf{+0.0297} & \textbf{+0.0101} & 5 \\
+ & asymmetric pref. & \textbf{$-$0.0144} & $-$0.0103 & $-$0.0075 & \textbf{$-$0.0128} & $-$0.0074 & \textbf{$-$0.0171} & -- \\
+\midrule
+MUS-BO & ratio 1.5 & \textbf{+0.0074} & $-$0.0275 & \textbf{$-$0.1189} & \textbf{+0.0113} & \textbf{+0.0218} & \textbf{+0.0087} & 0 \\
+ & ratio 2 & +0.0008 & \textbf{$-$0.0590} & \textbf{$-$0.1374} & \textbf{+0.0128} & \textbf{+0.0292} & \textbf{+0.0115} & 5 \\
+\midrule
+MUS-CS & ratio 1.5 & $-$0.0042 & $-$0.0036 & \textbf{$-$0.0363} & $-$0.0001 & +0.0027 & \textbf{+0.0046} & 0 \\
+ & ratio 2 & $-$0.0092 & $-$0.0147 & \textbf{$-$0.0818} & $-$0.0006 & +0.0048 & \textbf{+0.0103} & 5 \\
+ & keep boundary member & $-$0.0058 & $-$0.0079 & $-$0.0112 & $-$0.0012 & $-$0.0063 & \textbf{$-$0.0062} & -- \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

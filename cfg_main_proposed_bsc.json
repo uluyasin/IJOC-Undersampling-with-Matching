@@ -1,0 +1,20 @@
+{
+ "data_path": "data/benchmark_datasets.joblib",
+ "folds_path": "data/cv_folds.joblib",
+ "out_dir": "results/main",
+ "samplers": [
+  "MUS-BS",
+  "MUS-BO",
+  "MUS-CS"
+ ],
+ "classifiers": [
+  "CART",
+  "kNN",
+  "SVM",
+  "LR",
+  "RF"
+ ],
+ "tag": "main",
+ "chunk": 20,
+ "ms_path": "src/matchsampling.py"
+}

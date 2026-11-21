@@ -1,0 +1,22 @@
+# Python 3.11 (all experiments: CPython 3.11.18, 64-bit Windows, conda environment "imbml").
+# Direct dependencies, pinned to the versions used for all experiments.
+# The complete frozen experiment environment, including transitive dependencies, is docs/environment.txt.
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.1.1
+pyarrow==26.0.1
+scikit-learn==1.9.1
+imbalanced-learn==0.14.2
+networkx==3.6.1
+statsmodels==0.15.0
+baycomp==1.0.2
+problexity==0.5.11
+matplotlib==3.11.2
+joblib==1.6.0
+# Part of the experiment environment and cited in the paper; not imported by the scripts of this repository.
+scikit-posthocs==0.18.0
+# Tests only: reference solver and test runner (the tests were run with pytest 9.2.0).
+matching==1.4.3
+pytest==9.2.0
+# Dataset loader: install separately and without dependencies (see README.md, section Building):
+#   pip install --no-deps imbalanced-databases==0.1.1

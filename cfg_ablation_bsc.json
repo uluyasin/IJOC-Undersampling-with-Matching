@@ -1,0 +1,49 @@
+{
+ "data_path": "data/benchmark_datasets.joblib",
+ "folds_path": "data/cv_folds.joblib",
+ "out_dir": "results/ablation",
+ "samplers": [
+  "MUS-BS:r1.5",
+  "MUS-BO:r1.5",
+  "MUS-CS:r1.5",
+  "MUS-BS:r2",
+  "MUS-BO:r2",
+  "MUS-CS:r2",
+  "MUS-CS:keep=boundary",
+  "MUS-BS:asym"
+ ],
+ "sampler_params": {
+  "MUS-BS:r1.5": {
+   "target_ratio": 1.5
+  },
+  "MUS-BO:r1.5": {
+   "target_ratio": 1.5
+  },
+  "MUS-CS:r1.5": {
+   "target_ratio": 1.5
+  },
+  "MUS-BS:r2": {
+   "target_ratio": 2
+  },
+  "MUS-BO:r2": {
+   "target_ratio": 2
+  },
+  "MUS-CS:r2": {
+   "target_ratio": 2
+  },
+  "MUS-CS:keep=boundary": {
+   "keep_rule": "boundary"
+  },
+  "MUS-BS:asym": {
+   "preferences": "asymmetric"
+  }
+ },
+ "classifiers": [
+  "CART",
+  "kNN",
+  "SVM"
+ ],
+ "tag": "abl",
+ "ms_path": "src/matchsampling.py",
+ "chunk": 40
+}

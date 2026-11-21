@@ -1,0 +1,40 @@
+{
+ "data_path": "data/benchmark_datasets.joblib",
+ "folds_path": "data/cv_folds.joblib",
+ "out_dir": "results/ablation",
+ "samplers": [
+  "RUS:r1.5",
+  "NM1:r1.5",
+  "CC:r1.5",
+  "RUS:r2",
+  "NM1:r2",
+  "CC:r2"
+ ],
+ "sampler_params": {
+  "RUS:r1.5": {
+   "target_ratio": 1.5
+  },
+  "NM1:r1.5": {
+   "target_ratio": 1.5
+  },
+  "CC:r1.5": {
+   "target_ratio": 1.5
+  },
+  "RUS:r2": {
+   "target_ratio": 2
+  },
+  "NM1:r2": {
+   "target_ratio": 2
+  },
+  "CC:r2": {
+   "target_ratio": 2
+  }
+ },
+ "classifiers": [
+  "CART",
+  "kNN",
+  "SVM"
+ ],
+ "tag": "abl",
+ "chunk": 40
+}

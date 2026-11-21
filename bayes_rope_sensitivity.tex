@@ -1,0 +1,32 @@
+\begin{table}[!htbp]
+\centering
+\caption{Bayesian signed-rank tests (baycomp, prior 0.5, 50{,}000 posterior samples, seed 20261115) of each MUS method against RUS and ClusterCentroids (CC) for ROPE half-widths 0.0025, 0.005, 0.01, 0.02 (left to right within each classifier). W/B/E: posterior probability $\geq 0.95$ that the MUS method is worse / better by more than the ROPE / practically equivalent; i: inconclusive. The posterior probabilities are given in \texttt{results/revision/analyses/A3\_bayes\_rope.csv} of the repository.}
+\label{tab:a3_bayes_rope}
+\scriptsize
+\setlength{\tabcolsep}{1.6pt}
+\begin{tabular}{lllcccccccccccccccccccc}
+\toprule
+ & & & \multicolumn{4}{c}{CART} & \multicolumn{4}{c}{kNN} & \multicolumn{4}{c}{SVM} & \multicolumn{4}{c}{LR} & \multicolumn{4}{c}{RF} \\
+\cmidrule(lr){4-7}\cmidrule(lr){8-11}\cmidrule(lr){12-15}\cmidrule(lr){16-19}\cmidrule(lr){20-23}
+Metric & Method & vs & .0025 & .005 & .01 & .02 & .0025 & .005 & .01 & .02 & .0025 & .005 & .01 & .02 & .0025 & .005 & .01 & .02 & .0025 & .005 & .01 & .02 \\
+\midrule
+G-mean & MUS-BS & RUS & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W \\
+ & MUS-BO & RUS & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W \\
+ & MUS-CS & RUS & i & i & E & E & B & i & E & E & i & i & E & E & i & E & E & E & i & i & E & E \\
+ & MUS-CO & RUS & i & i & E & E & i & i & E & E & i & E & E & E & i & i & E & E & i & i & E & E \\
+ & MUS-BS & CC & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W \\
+ & MUS-BO & CC & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W & W \\
+ & MUS-CS & CC & i & i & i & E & B & i & i & E & i & i & E & E & i & i & E & E & i & i & E & E \\
+ & MUS-CO & CC & i & i & i & E & B & i & i & E & i & i & E & E & i & i & E & E & i & i & E & E \\
+\midrule
+ROC-AUC & MUS-BS & RUS & W & W & W & i & W & W & W & W & W & i & i & i & W & W & i & i & W & W & W & i \\
+ & MUS-BO & RUS & W & W & W & W & W & W & W & W & W & i & i & i & W & W & i & i & W & W & W & i \\
+ & MUS-CS & RUS & i & i & E & E & B & i & E & E & i & E & E & E & i & E & E & E & i & E & E & E \\
+ & MUS-CO & RUS & i & i & E & E & B & i & E & E & i & E & E & E & i & E & E & E & i & E & E & E \\
+ & MUS-BS & CC & W & W & W & W & W & W & W & W & W & W & i & i & W & W & i & i & W & W & W & i \\
+ & MUS-BO & CC & W & W & W & W & W & W & W & W & W & W & i & i & W & W & i & i & W & W & W & i \\
+ & MUS-CS & CC & i & i & i & E & i & E & E & E & i & E & E & E & i & E & E & E & i & E & E & E \\
+ & MUS-CO & CC & i & i & E & E & i & i & E & E & i & E & E & E & i & E & E & E & i & E & E & E \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,19 @@
+{
+ "benchmark_datasets.joblib": "data/benchmark_datasets.joblib",
+ "cv_folds.joblib": "data/cv_folds.joblib",
+ "complexity": "data/dataset_complexity.csv",
+ "registry": "data/dataset_registry.csv",
+ "matchsampling.py": "src/matchsampling.py",
+ "results_main_final.parquet": "results/results_main_final.parquet",
+ "selections_main_final.joblib": "results/selections_main_final.joblib",
+ "mus_co_k_sweep.csv": "results/mus_co_k_sweep.csv",
+ "stats_per_dataset_means.csv": "results/analysis/stats_per_dataset_means.csv",
+ "stats_wilcoxon_holm.csv": "results/analysis/stats_wilcoxon_holm.csv",
+ "diag_by_dataset.csv": "results/analysis/diag_by_dataset.csv",
+ "diag_performance_link.csv": "results/analysis/diag_performance_link.csv",
+ "diag_summary.csv": "results/analysis/diag_summary.csv",
+ "meta_gain_correlations.csv": "results/analysis/meta_gain_correlations.csv",
+ "stats_bayes.csv": "results/analysis/stats_bayes.csv",
+ "meta_gains_per_dataset.csv": "results/analysis/meta_gains_per_dataset.csv",
+ "stats_ablation.csv": "results/analysis/stats_ablation.csv"
+}

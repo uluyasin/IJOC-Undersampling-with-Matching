@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+
+# outputs written by the scripts (README, section Replicating)
+results/
+figs/
+figs_ijoc/
+pipeline/lpm_validation.csv
+
+# LaTeX build files of the extended results
+docs/extended_results/*.aux
+docs/extended_results/*.bbl
+docs/extended_results/*.blg
+docs/extended_results/*.log
+docs/extended_results/*.out
+docs/extended_results/*.toc
+docs/extended_results/*.fdb_latexmk
+docs/extended_results/*.fls
